@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nurdarwina Safiah CV</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="assets/style/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li title="About Me"><a href="index.html">About Me</a></li>
+                <li title="Education"><a href="Education.html">Education</a></li>
+                <li title="Skills"><a href="Skills.html">Skills</a></li>
+                <li title="Experience"><a href="Experience.html">Experience</a></li>
+                <li title="Contact"><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>About Me</h1>
+       
+    </header>
+
+<div class="about-me">
+  <div class="photo-grid">
+    <img src="assets/images/ProfilePhoto.jpg" title ="That's me!" alt="Profile Photo" class="grid-pic fade-in">
+    <img src="assets/images/kayak.jpg" title = "This was in Perlis!" alt="Kayak" class="grid-pic fade-in">
+    <img src="assets/images/waterfall.jpg" title = "I love waterfalls." alt="Waterfall" class="grid-pic fade-in">
+    <img src="assets/images/hiking.jpg" title="My favourite pastime!" alt="Hiking Trail" class="grid-pic fade-in"> <!-- fade in effect -->
+  </div>
+
+  <div class="about-boxes">
+    <p class="about-text">
+      Hello! My name is Nurdarwina Safiah. I'm an IT student who's passionate about databases, cybersecurity and discovering new tech. <br> I'm dedicated, detail-oriented and love to combine technology with meaningful impact.
+    </p>
+    <p class="about-text">
+      Outside of academics, I really enjoy spending time outdoors. Some of my favourite activities are kayaking and hiking. Here are some pictures I took during those activities.
+    </p>
+  </div>
+</div>
+
+
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); //stop observing
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    faders.forEach(el => {
+        appearOnScroll.observe(el);
+    });
+</script>
+
+<script src="assets/js/style.js"></script>
+
+</body>
+</html>
