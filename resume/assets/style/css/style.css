@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header and Navigation */
+header {
+  background-color: black;
+  padding: 1rem;
+}
+header h1 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-family: Times New Roman, serif;
+  margin-top: 1rem;
+}
+nav {
+  background-color: black;
+  padding: 1rem;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-family: Times New Roman, serif;
+  transition: background-color 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+/* Education Timeline */
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  margin: 3rem auto;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+/* Vertical Line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #2a3eb1;
+}
+
+/* Timeline Item Base */
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  margin: 2rem 0;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animate Visible Items */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Alternate Layout for Even Items */
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+/* Dot Style */
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  background-color: #1c2a80;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #1c2a80;
+  z-index: 2;
+  position: relative;
+  top: 10px;
+}
+
+/* Content Box */
+.timeline-content {
+  background-color: #e6f0ff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  width: 45%;
+}
+
+/* Content Heading */
+.timeline-content h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  color: #2a3eb1;
+}
+
+/* Content Paragraph */
+.timeline-content p {
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  color: #333;
+  margin: 0;
+}
+/* Skills Section */
+.skills-section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Times New Roman', serif;
+  color: #222;
+}
+.slider-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.skills-slider li {
+  flex: 0 0 100%;
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  font-family: Georgia, serif;
+}
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2a3eb1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  z-index: 10;
+}
+.prev-btn {
+  left: -3rem;
+}
+.next-btn {
+  right: -3rem;
+}
+
+/* About Me Page */
+.about-me {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 400px;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+.grid-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.about-boxes {
+  flex: 1;
+  min-width: 250px;
+  max-width: 600px;
+}
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 1.5rem;
+  font-family: Georgia, serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+/* Contact Page */
+.myimage{
+  margin-left: 535px;
+  margin-top: 50px;
+}
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-wrapper {
+    max-width: 90%;
+    flex-direction: column;
+  }
+  .prev-btn { left: 10px; }
+  .next-btn { right: 10px; }
+  .skills-slider li {
+    padding: 1.5rem;
+  }
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    justify-content: center;
+  }
+  .about-boxes {
+    width: 90%;
+  }
+  .about-text {
+    margin-top: 1rem;
+  }
+  .timeline-container::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+  }
+  .timeline-item .timeline-content {
+    margin: 0 0 0 40px;
+  }
+  .timeline-dot {
+    left: 20px !important;
+    right: auto !important;
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurdarwina Safiah CV</title>
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="assets/style/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Experience.html">Experience</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Skills</h1>
+  </header>
+
+  <section class="skills-section">
+    
+    <div class="slider-wrapper">
+      <button class="prev-btn" title="Previous Slide">&#8592;</button>
+
+      <ul class="skills-slider" id="skillSlider">
+        <li>
+          <div>
+            <span class="skill-icon">💻</span>
+            <h3>Programming</h3>
+            <p>Python, C++, Java</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="skill-icon">🗄️</span>
+            <h3>Databases</h3>
+            <p>MySQL, Access</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="skill-icon">📊</span>
+            <h3>Microsoft Office</h3>
+            <p>Word, Excel, PowerPoint</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="skill-icon">🌐</span>
+            <h3>Soft Skills</h3>
+            <p>Leadership Roles, Team Player</p>
+          </div>
+        </li>
+      </ul>
+
+      <button class="next-btn" title="Next Slide">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- Slider Logic -->
+  <script>
+    const slider = document.getElementById('skillSlider');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    let currentIndex = 0;
+    const totalSlides = slider.children.length;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+
+    // shows first slide
+    updateSlider();
+  </script>
+
+  <script src="assets/js/style.js"></script>
+</body>
+</html>
